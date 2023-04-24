@@ -1,4 +1,5 @@
 const indexRouter = require('express').Router()
+const userController = require('./controllers/userController')
 
 indexRouter.get('/', (req, res) => {
     console.log('Got it')
