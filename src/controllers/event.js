@@ -1,11 +1,10 @@
-const eventModel = require('../models/event')
+const EventModel = require('../models/event')
 
-const getEvent = (eventId) => {
+const getEvents = (eventId) => {
     let event = null
     try {
-        const ev = new Event(eventId)
-        // event = new eventModel(eventId)
-        event = await 
+        const ev = new EventModel(eventId)
+        event = ev.getEvent()
     } catch(err) {
         console.log('Error in /src/controllers/event.js - getEvent(): ', err)
     }
@@ -22,7 +21,7 @@ const eventController = {
     async getEventExternal(req, res) {
         let event = null
         try {
-            const dbres = await getEvent(req.body?.eventId)
+            event = await getEvents(req.body?.eventId)
         } catch(err) {
             console.log('Error in /src/controllers/event.js - eventController.getEventExternal(): ', err)
         }

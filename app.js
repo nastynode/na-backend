@@ -11,7 +11,7 @@ app.use(cors())
 app.options('*', cors())
 
 app.use('/', require('./src/routes/index'))
-app.use('/event', require('./src/routes/event'))
+app.use('/events', require('./src/routes/event'))
 
 app.listen(port, () => console.log(`App running on ${port}`))
 

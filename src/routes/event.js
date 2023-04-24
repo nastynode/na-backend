@@ -3,4 +3,4 @@ const eventRouter = require('express').Router()
 
 eventRouter.get('/', eventController.getEventExternal)
 
-module.exports = eventRouter()
+module.exports = eventRouter
